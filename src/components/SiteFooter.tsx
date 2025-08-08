@@ -18,8 +18,8 @@ const SiteFooter: React.FC = () => {
               </div>
             </div>
             <p className="brand-desc">
-              Crypto mining platform,
-              <br /> Cloud mining HTML Template.
+              Crypto loan platform
+              
             </p>
             <div className="payment-row" aria-label="Payment methods">
               <div className="pay-badge" style={{ ["--badge-hsl" as any]: "220 90% 60%" } as React.CSSProperties}><CreditCard className="pay-svg" /></div>

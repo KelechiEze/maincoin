@@ -2,68 +2,49 @@ import React from "react";
 import { Star } from "lucide-react";
 import "./PricingSection.css";
 
-interface Plan {
+interface LoanPlan {
   name: string;
-  price: string;
-  unit: string;
-  features: string[];
-  url: string; // 👈 Added URL field for redirection
+  loanAmount: number;
+  term: string;
+  interestRate: string;
+  depositRequired: number;
+  url: string;
   highlight?: boolean;
 }
 
-const plans: Plan[] = [
+const loanPlans: LoanPlan[] = [
   {
-    name: "Small",
-    price: "$500.50",
-    unit: "for 1 MH/s",
-    url: "https://paycoin-dashboard.netlify.app/", // 🔁 Replace with actual URL
-    features: [
-      "Minimal Hashrate: 1 MH/s",
-      "Service pay: 0.005$ / 1 MH/s / 24h",
-      "Equipment: HashCoins SCRYPT",
-      "Automatic charging in BTC",
-      "1 year",
-    ],
+    name: "Starter Loan",
+    loanAmount: 1000,
+    term: "6 months",
+    interestRate: "5%",
+    depositRequired: 500,
+    url: "https://paycoin-dashboard.netlify.app/",
   },
   {
-    name: "Medium",
-    price: "$1500.20",
-    unit: "for 10 GH/s",
-    url: "https://paycoin-dashboard.netlify.app/", // 🔁 Replace with actual URL
-    features: [
-      "Minimal Hashrate: 10 GH/s",
-      "Service pay: 0.0035$ / 10 GH/s / 24h",
-      "Equipment: HashCoins SHA-256",
-      "Automatic charging in BTC",
-      "1 year",
-    ],
+    name: "Growth Loan",
+    loanAmount: 5000,
+    term: "12 months",
+    interestRate: "7%",
+    depositRequired: 2500,
+    url: "https://paycoin-dashboard.netlify.app/",
   },
   {
-    name: "Large",
-    price: "$3000.70",
-    unit: "for 100 KH/s",
-    url: "https://paycoin-dashboard.netlify.app/", // 🔁 Replace with actual URL
-    features: [
-      "Minimal Hashrate: 100 KH/s",
-      "Service pay: No",
-      "Equipment: GPU Rigs",
-      "Automatic charging in ETH",
-      "1 year",
-    ],
+    name: "Business Loan",
+    loanAmount: 10000,
+    term: "18 months",
+    interestRate: "8%",
+    depositRequired: 5000,
+    url: "https://paycoin-dashboard.netlify.app/",
     highlight: true,
   },
   {
-    name: "Pro",
-    price: "$5000.90",
-    unit: "for 1 MH/s",
-    url: "https://paycoin-dashboard.netlify.app/", // 🔁 Replace with actual URL
-    features: [
-      "Minimal Hashrate: 1 MH/s",
-      "Service pay: No",
-      "Equipment: Multi-Factor",
-      "Automatic charging in DASH",
-      "1 year",
-    ],
+    name: "Enterprise Loan",
+    loanAmount: 20000,
+    term: "24 months",
+    interestRate: "10%",
+    depositRequired: 10000,
+    url: "https://paycoin-dashboard.netlify.app/",
   },
 ];
 
@@ -72,15 +53,14 @@ const PricingSection: React.FC = () => {
     <section id="pricing" className="pricing-section" aria-labelledby="pricing-title">
       <div className="pricing-container">
         <header className="pricing-header">
-          <h2 id="pricing-title">Pricing</h2>
+          <h2 id="pricing-title">Loan Plans</h2>
           <p className="pricing-sub">
-            Various versions have evolved over the years, sometimes by accident,
-            sometimes on purpose.
+            Choose a loan plan that fits your needs. A deposit of 50% of the loan amount is required before withdrawal.
           </p>
         </header>
 
         <div className="plan-grid" role="list">
-          {plans.map((plan) => (
+          {loanPlans.map((plan) => (
             <article
               key={plan.name}
               className={`plan-card ${plan.highlight ? "is-highlight" : ""}`}
@@ -95,24 +75,26 @@ const PricingSection: React.FC = () => {
               <h3 className="plan-name">{plan.name}</h3>
 
               <ul className="plan-features">
-                {plan.features.map((f) => (
-                  <li key={f}>{f}</li>
-                ))}
+                <li>Loan Amount: ${plan.loanAmount.toLocaleString()}</li>
+                <li>Deposit Required: ${plan.depositRequired.toLocaleString()}</li>
+                <li>Loan Term: {plan.term}</li>
+                <li>Interest Rate: {plan.interestRate}</li>
+                <li>Instant Approval Process</li>
               </ul>
 
               <div className="plan-price">
-                <span className="amount">{plan.price}</span>
+                <span className="amount">${plan.loanAmount.toLocaleString()}</span>
               </div>
-              <p className="plan-unit">{plan.unit}</p>
+              <p className="plan-unit">Loan Amount</p>
 
               <a
                 href={plan.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="plan-cta"
-                aria-label={`Buy ${plan.name} plan`}
+                aria-label={`Apply for ${plan.name}`}
               >
-                BUY NOW
+                APPLY NOW
               </a>
             </article>
           ))}
