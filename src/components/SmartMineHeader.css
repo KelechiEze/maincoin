@@ -1,0 +1,164 @@
+.smh-header {
+  position: relative;
+  width: 100%;
+  background: transparent;
+  z-index: 30;
+}
+
+.smh-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Branding */
+.smh-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.smh-logo {
+  background: hsl(var(--brand-soft));
+  color: hsl(var(--brand));
+  padding: 10px;
+  border-radius: 9999px;
+  box-shadow: var(--shadow-soft);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.smh-brand-text {
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 1.05;
+  color: hsl(var(--ink-strong));
+}
+
+.smh-brand-line {
+  font-size: 16px;
+}
+
+.smh-bold {
+  font-weight: 700;
+}
+
+/* Nav */
+.smh-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.smh-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: hsl(var(--ink-muted));
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 200ms ease, transform 200ms ease;
+}
+
+.smh-link:hover {
+  color: hsl(var(--brand));
+  transform: translateY(-1px);
+}
+
+/* Actions */
+.smh-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+}
+
+.smh-signin {
+  background: hsl(var(--background));
+  color: hsl(var(--brand));
+  border: 1px solid hsl(var(--brand-soft));
+  border-radius: 9999px;
+  padding: 10px 16px;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  text-transform: uppercase;
+  box-shadow: 0 2px 6px hsl(var(--brand) / 0.12);
+  transition: background 200ms ease, color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+  text-decoration: none; /* 🔁 Removes underline */
+}
+
+.smh-signin:hover {
+  background: hsl(var(--brand));
+  color: hsl(var(--primary-foreground));
+  box-shadow: 0 8px 24px hsl(var(--brand) / 0.25);
+  transform: translateY(-1px);
+}
+
+.smh-burger {
+  display: none;
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--card));
+  border-radius: 10px;
+  padding: 8px;
+  color: hsl(var(--ink-strong));
+}
+
+/* Mobile menu */
+.smh-mobile {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 62px;
+  margin: 0 16px;
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: 14px;
+  box-shadow: var(--shadow-elevated);
+  padding: 12px;
+  transform-origin: top center;
+  opacity: 0;
+  transform: translateY(-6px) scale(0.98);
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.smh-mobile.open {
+  display: block;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.smh-mobile-link {
+  display: block;
+  padding: 12px 10px;
+  color: hsl(var(--ink-strong));
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.smh-mobile-link:hover {
+  background: hsl(var(--accent));
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .smh-inner {
+    grid-template-columns: 1fr auto;
+  }
+
+  .smh-nav {
+    display: none;
+  }
+
+  .smh-burger {
+    display: inline-flex;
+  }
+}

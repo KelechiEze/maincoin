@@ -1,0 +1,118 @@
+/* SupportedCurrencies.css */
+
+.supported-currencies {
+  --section-pad: clamp(2rem, 4vw, 4rem);
+  padding: var(--section-pad) 1rem;
+  background: transparent;
+  animation: sc-fade-in 600ms ease-out both;
+}
+
+.sc-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.sc-header {
+  text-align: center;
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.sc-header h2 {
+  color: hsl(var(--foreground));
+  font-weight: 700;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  letter-spacing: 0.2px;
+}
+
+.sc-subtext {
+  color: hsl(var(--muted-foreground));
+  max-width: 720px;
+  margin: 0.5rem auto 0;
+  line-height: 1.6;
+}
+
+.currency-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem 1rem;
+  justify-items: center;
+}
+
+@media (min-width: 600px) {
+  .currency-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 900px) {
+  .currency-grid { grid-template-columns: repeat(6, 1fr); }
+}
+
+.currency-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+  padding: 0.5rem 0.25rem;
+  transition: transform 220ms ease, filter 220ms ease;
+}
+
+.currency-item:hover {
+  transform: translateY(-2px);
+  filter: drop-shadow(0 6px 14px hsl(var(--ring) / 0.15));
+}
+
+.coin-icon {
+  --size: 56px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: hsl(var(--coin-hsl));
+  box-shadow: 0 6px 16px hsl(var(--coin-hsl) / 0.35), inset 0 0 0 2px hsl(0 0% 100% / 0.12);
+  transition: background 220ms ease, transform 220ms ease;
+}
+
+.coin-svg {
+  width: 28px;
+  height: 28px;
+  color: hsl(0 0% 100%);
+  stroke-width: 2.25;
+}
+
+.currency-item:hover .coin-icon { transform: translateY(-1px); }
+
+.coin-meta { display: flex; flex-direction: column; gap: 2px; }
+
+.coin-name {
+  color: hsl(var(--foreground));
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.coin-rate {
+  color: hsl(var(--muted-foreground));
+  font-size: 0.85rem;
+}
+
+.sc-cta-wrap { display: grid; place-items: center; margin-top: clamp(1.25rem, 3vw, 2rem); }
+
+.sc-cta {
+  --cta-start: 216 100% 66%;
+  --cta-end: 216 100% 56%;
+  background: linear-gradient(135deg, hsl(var(--cta-start)), hsl(var(--cta-end)));
+  color: hsl(0 0% 100%);
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-decoration: none;
+  box-shadow: 0 10px 18px hsl(216 100% 56% / 0.35);
+  transition: filter 220ms ease, transform 220ms ease;
+}
+
+.sc-cta:hover { filter: brightness(0.95); transform: translateY(-1px); }
+
+@keyframes sc-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}

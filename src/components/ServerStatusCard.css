@@ -1,0 +1,52 @@
+/* ServerStatusCard.css */
+
+.ssc-card {
+  width: 320px;
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: 16px;
+  box-shadow: var(--shadow-elevated);
+  padding: 18px;
+}
+
+.ssc-title {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: hsl(var(--ink-strong));
+}
+
+.ssc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.ssc-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ssc-dot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ssc-text {
+  color: hsl(var(--ink-strong));
+  font-size: 14px;
+}
+
+.status-green { color: hsl(145 63% 42%); }
+.status-orange { color: hsl(32 100% 50%); }
+.status-red { color: hsl(0 84% 60%); }
+
+@media (max-width: 800px) {
+  .ssc-card {
+    width: 100%;
+  }
+}

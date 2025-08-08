@@ -1,0 +1,66 @@
+import React from "react";
+import { Bitcoin, Gem, DollarSign, Coins, Shield, Check, Infinity, Leaf, CircleDot, Gauge, EyeOff } from "lucide-react";
+import "./SupportedCurrencies.css";
+
+interface CurrencyItem {
+  name: string;
+  rate: string;
+  colorHsl: string; // e.g. "210 100% 60%"
+  Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+}
+
+const currencies: CurrencyItem[] = [
+  { name: "Bitcoin", rate: "43.1 PH/s", colorHsl: "28 100% 50%", Icon: Bitcoin },
+  { name: "Ethereum Classic", rate: "20.0 GH/s", colorHsl: "210 10% 30%", Icon: Gem },
+  { name: "Ethereum", rate: "120.1 GH/s", colorHsl: "0 0% 12%", Icon: Gem },
+  { name: "Startcoin", rate: "28.6 kH/s", colorHsl: "205 100% 65%", Icon: DollarSign },
+  { name: "Litecoin", rate: "2.7 GH/s", colorHsl: "0 0% 70%", Icon: Coins },
+  { name: "Monero", rate: "44.6 GH/s", colorHsl: "22 90% 55%", Icon: Shield },
+  { name: "Vertcoin", rate: "1.6 MH/s", colorHsl: "140 60% 45%", Icon: Check },
+  { name: "Infinitecoin", rate: "184.1 kH/s", colorHsl: "340 80% 50%", Icon: Infinity },
+  { name: "Salus", rate: "6.2 MH/s", colorHsl: "150 60% 40%", Icon: Leaf },
+  { name: "PrimeCoin", rate: "12.1 MH/s", colorHsl: "45 95% 55%", Icon: CircleDot },
+  { name: "Dash", rate: "198.8 kH/s", colorHsl: "210 100% 45%", Icon: Gauge },
+  { name: "Shadow", rate: "13.5 MH/s", colorHsl: "350 60% 40%", Icon: EyeOff },
+];
+
+const SupportedCurrencies: React.FC = () => {
+  return (
+    <section id="supported-currencies" className="supported-currencies" aria-labelledby="supported-currencies-title">
+      <div className="sc-container">
+        <header className="sc-header">
+          <h2 id="supported-currencies-title">Supported currencies</h2>
+          <p className="sc-subtext">
+            If you are going to use a passage of Lorem Ipsum, you need to be sure there
+            isn't anything embarrassing hidden in the middle of text.
+          </p>
+        </header>
+
+        <ul className="currency-grid" role="list">
+          {currencies.map(({ name, rate, Icon, colorHsl }) => (
+            <li key={name} className="currency-item">
+              <div
+                className="coin-icon"
+                style={{ ["--coin-hsl" as any]: colorHsl } as React.CSSProperties}
+                aria-hidden="true"
+              >
+                <Icon className="coin-svg" />
+              </div>
+              <div className="coin-meta">
+                <span className="coin-name">{name}</span>
+                <span className="coin-rate">{rate}</span>
+              </div>
+            </li>
+          ))}
+        </ul>
+
+        <div className="sc-cta-wrap">
+          <a href="#" className="sc-cta" aria-label="Get started mining">GET STARTED</a>
+        </div>
+      </div>
+      <link rel="canonical" href="/#supported-currencies" />
+    </section>
+  );
+};
+
+export default SupportedCurrencies;
