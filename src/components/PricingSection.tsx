@@ -18,7 +18,7 @@ const loanPlans: LoanPlan[] = [
     loanAmount: 1000,
     term: "6 months",
     interestRate: "5%",
-    depositRequired: 500,
+    depositRequired: 200,
     url: "https://paycoin-dashboard.netlify.app/",
   },
   {
@@ -26,7 +26,7 @@ const loanPlans: LoanPlan[] = [
     loanAmount: 5000,
     term: "12 months",
     interestRate: "7%",
-    depositRequired: 2500,
+    depositRequired: 1000,
     url: "https://paycoin-dashboard.netlify.app/",
   },
   {
@@ -34,7 +34,7 @@ const loanPlans: LoanPlan[] = [
     loanAmount: 10000,
     term: "18 months",
     interestRate: "8%",
-    depositRequired: 5000,
+    depositRequired: 3000,
     url: "https://paycoin-dashboard.netlify.app/",
     highlight: true,
   },
@@ -43,7 +43,7 @@ const loanPlans: LoanPlan[] = [
     loanAmount: 20000,
     term: "24 months",
     interestRate: "10%",
-    depositRequired: 10000,
+    depositRequired: 5000,
     url: "https://paycoin-dashboard.netlify.app/",
   },
 ];

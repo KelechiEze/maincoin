@@ -23,7 +23,9 @@ const SmartMineHeader: React.FC = () => {
         <nav className="smh-nav" aria-label="Primary">
           <a href="#home" className="smh-link">Home</a>
           <a href="#supported-currencies" className="smh-link">Currencies</a>
-          <a href="#pricing" className="smh-link">Pricing plans</a>
+          <a href="#pricing" className="smh-link">Loan plans</a>
+          <a href="#why" className="smh-link">Why Choose Us</a>
+          <a href="#testimonials" className="smh-link">Testimonials</a>
         </nav>
 
         {/* Actions */}
@@ -52,7 +54,9 @@ const SmartMineHeader: React.FC = () => {
       <div className={`smh-mobile ${open ? "open" : ""}`}>
         <a href="#home" className="smh-mobile-link">Home</a>
         <a href="#supported-currencies" className="smh-mobile-link">Currencies</a>
-        <a href="#pricing" className="smh-mobile-link">Pricing plans</a>
+        <a href="#pricing" className="smh-mobile-link">Loan plans</a>
+        <a href="#why" className="smh-mobile-link">Why Choose Us</a>
+        <a href="#testimonials" className="smh-mobile-link">Testimonials</a>
       </div>
     </header>
   );
