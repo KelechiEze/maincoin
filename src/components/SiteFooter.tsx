@@ -19,7 +19,6 @@ const SiteFooter: React.FC = () => {
             </div>
             <p className="brand-desc">
               Crypto loan platform
-              
             </p>
             <div className="payment-row" aria-label="Payment methods">
               <div className="pay-badge" style={{ ["--badge-hsl" as any]: "220 90% 60%" } as React.CSSProperties}><CreditCard className="pay-svg" /></div>
@@ -70,9 +69,9 @@ const SiteFooter: React.FC = () => {
         <div className="ft-bottom">
           <p className="copyright">© SmartMine, 2018—2025. Created by Dmitry Volkov.</p>
           <nav className="ft-bottom-links" aria-label="Legal">
-            <a href="#" className="story-link">Legal documents</a>
+            <a href="/terms" className="story-link">Terms & Conditions</a>
+            <a href="/privacy" className="story-link">Privacy Policy</a>
             <a href="#" className="story-link">Knowledge base</a>
-            <a href="#" className="story-link">Privacy policy</a>
           </nav>
         </div>
       </div>
