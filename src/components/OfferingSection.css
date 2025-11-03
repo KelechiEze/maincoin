@@ -1,0 +1,145 @@
+/* OfferingSection.css */
+
+.offering-section {
+  --pad: clamp(2rem, 6vw, 4rem);
+  padding: var(--pad) 1rem;
+  background: radial-gradient(1200px 600px at 50% -200px, hsl(var(--accent) / 0.08), transparent 60%);
+  animation: fade-in 500ms ease-out both;
+}
+
+.offering-container { 
+  max-width: 1100px; 
+  margin: 0 auto; 
+}
+
+.offering-header { 
+  text-align: center; 
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem); 
+}
+
+.offering-header h2 { 
+  color: hsl(var(--foreground)); 
+  font-weight: 700; 
+  font-size: clamp(1.5rem, 2vw, 2rem); 
+  margin-bottom: 0.5rem;
+}
+
+.offering-sub { 
+  color: hsl(var(--muted-foreground)); 
+  max-width: 720px; 
+  margin: .5rem auto 0; 
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 700px) { 
+  .services-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+  } 
+}
+
+@media (min-width: 1024px) { 
+  .services-grid { 
+    grid-template-columns: repeat(3, 1fr); 
+  } 
+}
+
+.service-card {
+  background: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  border: 1px solid hsl(var(--border));
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  box-shadow: 0 10px 30px hsl(var(--background) / 0.3);
+  position: relative;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.service-card:hover { 
+  transform: translateY(-4px); 
+  box-shadow: 0 18px 46px hsl(var(--ring) / 0.25); 
+}
+
+.service-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+
+.service-icon img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.car-loan .service-icon {
+  background: linear-gradient(135deg, hsl(216 100% 66% / 0.15), hsl(216 100% 56% / 0.15));
+}
+
+.wedding-loan .service-icon {
+  background: linear-gradient(135deg, hsl(320 100% 66% / 0.15), hsl(320 100% 56% / 0.15));
+}
+
+.property-loan .service-icon {
+  background: linear-gradient(135deg, hsl(160 100% 66% / 0.15), hsl(160 100% 56% / 0.15));
+}
+
+.service-name { 
+  font-weight: 700; 
+  color: hsl(var(--foreground)); 
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.service-description { 
+  color: hsl(var(--muted-foreground)); 
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.service-cta {
+  margin-top: 1rem;
+  background: transparent;
+  color: hsl(216 100% 45%);
+  border: 2px solid hsl(216 100% 75%);
+  border-radius: 999px;
+  padding: 0.6rem 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  transition: background 220ms ease, color 220ms ease, transform 220ms ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.service-cta:hover {
+  background: hsl(216 100% 60%);
+  color: white;
+  transform: translateY(-1px);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -71,7 +71,6 @@ const SiteFooter: React.FC = () => {
           <nav className="ft-bottom-links" aria-label="Legal">
             <a href="/terms" className="story-link">Terms & Conditions</a>
             <a href="/privacy" className="story-link">Privacy Policy</a>
-            <a href="#" className="story-link">Knowledge base</a>
           </nav>
         </div>
       </div>

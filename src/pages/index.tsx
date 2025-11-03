@@ -5,6 +5,7 @@ import LoanServiceComponent from ".././components/LoanServiceComponent";
 import SupportedCurrencies from "../components/SupportedCurrencies";
 import Testimonials from "../components/Testimonials";
 import PricingSection from "../components/PricingSection";
+import OfferingSection from "../components/OfferingSection";
 import SiteFooter from "../components/SiteFooter";
 
 
@@ -16,10 +17,11 @@ const Index = () => {
       <main>
         <HeroSection />
         <Testimonials />
+        <PricingSection />
+        <OfferingSection />
         <ImageCarousel />
         <LoanServiceComponent />
         <SupportedCurrencies />
-        <PricingSection />
         <SiteFooter />
       </main>
     </div>
